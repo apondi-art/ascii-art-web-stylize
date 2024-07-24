@@ -1,0 +1,118 @@
+:root {
+    --blue-900: #06222F;
+    --blue-800: #042D41;
+    --blue-700: #023D5A;
+    --blue-600: #02537A;
+    --blue-500: #0673A9;
+    --blue-400: #1E99D6;
+    --blue-300: #4DB6EA;
+    --blue-200: #8CD3F6;
+    --blue-100: #B9E6FC;
+    --blue-50: #E3F6FF;
+    --blue-25: #F1FAFF;
+    --white: #FFFFFF;
+    --red: #F44336;
+    --green: #3EA878;
+}
+
+body {
+    background-color: var(--blue-900);
+}
+
+.container {
+    width: 100vw;
+}
+
+h1 {
+    font-family: Tahoma, sans-serif;
+    color: var(--blue-25);
+    text-align: center;
+}
+
+form {
+    font-family: Tahoma, sans-serif;
+    text-align: center;
+}
+
+.input-label {
+    color: var(--blue-25);
+    font-size: 1rem;
+}
+
+#input {
+    width: 60vw;
+    height: 10vh;
+    resize: none;
+    border: 1px solid var(--blue-100);
+    background-color: var(--blue-900);
+    font-size: 1rem;
+    color: var(--blue-25)
+}
+
+#input:focus {
+    border-color: var(--blue-100);
+    outline: none;
+}
+
+.my-select {
+    border: 1px solid var(--blue-100);
+    background-color: var(--blue-900);
+    padding: 0.5rem;
+    color: var(--blue-25);
+    font-size: 1rem;
+    transition: background-color 0.3s, color 0.3s;
+
+}
+
+.my-select:hover {
+    background-color: var(--blue-25);
+    color: var(--blue-900);
+}
+
+.my-button {
+    border: 1px solid var(--blue-100);
+    background-color: var(--blue-900);
+    padding: 0.5rem;
+    margin-left: 20px;
+    color: var(--blue-25);
+    font-size: 1rem;
+    transition: background-color 0.3s, color 0.3s;
+
+}
+
+.my-button:hover {
+    background-color: var(--blue-25);
+    color: var(--blue-900);
+}
+
+.result {
+    width: 60vw;
+    min-height: 15vh;
+    max-height: 50vh;
+    overflow: auto;
+    border: 1px solid var(--blue-100);
+    margin: 20px auto;
+    font-size: 0.5rem;
+    font-weight: 900;
+    color: var(--blue-25);
+    font-family: monospace;
+    white-space: pre;
+}
+
+.header-link {
+    text-decoration: none;
+    /* Removes underline from the link */
+    color: inherit;
+    /* Inherits the text color from the parent element (the h1) */
+}
+
+.header-link:hover {
+    text-decoration: none;
+    border-bottom: 2px solid var(--blue-100);
+}
+.clear{
+    text-decoration: none;
+}
+.clear:hover{
+    text-decoration: none;
+}
