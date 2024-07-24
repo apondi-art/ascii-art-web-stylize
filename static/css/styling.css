@@ -20,18 +20,19 @@ body {
 }
 
 .container {
-    width: 100vw;
+    width: 60vw;
+    margin: 0 auto;
 }
 
 h1 {
     font-family: Tahoma, sans-serif;
     color: var(--blue-25);
-    text-align: center;
+    text-align: left;
 }
 
 form {
     font-family: Tahoma, sans-serif;
-    text-align: center;
+    text-align: left;
 }
 
 .input-label {
@@ -40,7 +41,7 @@ form {
 }
 
 #input {
-    width: 60vw;
+    width: 100%;
     height: 10vh;
     resize: none;
     border: 1px solid var(--blue-100);
@@ -86,7 +87,7 @@ form {
 }
 
 .result {
-    width: 60vw;
+    width: 100%;
     min-height: 15vh;
     max-height: 50vh;
     overflow: auto;
@@ -116,3 +117,48 @@ form {
 .clear:hover{
     text-decoration: none;
 }
+
+/* About */
+
+.heading{
+    color: var(--blue-25);
+    border-bottom: 0.5px solid var(--blue-300);
+    font-weight: 500;
+    font-size: 1.2rem;
+}
+.sub-heading{
+    font-weight: 500;
+    color: var(--blue-50);
+    font-size: 1rem;
+}
+
+.paragraph{
+    color: var(--blue-100);
+    font-size: 0.9rem;
+}
+
+/* Card */
+
+.card-container {
+    display: flex; /* Use flexbox to align items */
+    gap: 20px; /* Gap between each card */
+    justify-content: space-between;
+  }
+
+.card {
+    flex: 1;
+    min-width: 200px;
+    max-width: 300px;
+    height: auto;
+    padding: 0.5rem;
+    box-sizing: border-box;
+    /* border: 1px solid var(--blue-100); */
+
+  }
+  .card__img {
+    width: 100%;
+    height: auto;
+    border-radius: 50%;
+    object-fit: cover; 
+  }
+  
