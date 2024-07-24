@@ -16,10 +16,13 @@
 }
 header{
     font-family: Tahoma, sans-serif;
-    background-color:var(--blue-900);
-    color:var(--blue-25);
+    background-color:var(--blue-400);
+    color:var(--blue-800);
     padding: 10px 20px; 
+    display: flex;
+    text-decoration: none;
 }
+
 
 body {
     background-color: var(--blue-900);
