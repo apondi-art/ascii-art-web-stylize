@@ -4,11 +4,16 @@ import (
 	"fmt"
 	"log"
 	"net/http"
+	"os"
 
 	"ascii-art-web/handlers"
 )
 
 func main() {
+	if len(os.Args) != 1 {
+		log.Fatal("Usage: go run main.go")
+		return
+	}
 	fs := http.FileServer(http.Dir("static"))
 	http.Handle("/static/", http.StripPrefix("/static/", fs))
 	http.HandleFunc("/", handlers.GetAsciiForm)
