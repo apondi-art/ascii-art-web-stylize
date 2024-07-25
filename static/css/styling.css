@@ -14,17 +14,23 @@
     --red: #F44336;
     --green: #3EA878;
 }
-header{
-    font-family: Tahoma, sans-serif;
-    background-color:var(--blue-400);
-    color:var(--blue-800);
-    padding: 10px 20px; 
+
+header {
+    color: var(--blue-25);
     display: flex;
     text-decoration: none;
+    margin-bottom: 2.5rem;
+    font-size: 1.5rem;
+}
+
+nav {
+    display: flex;
+    gap: 50px;
 }
 
 
 body {
+    font-family: Tahoma, sans-serif;
     background-color: var(--blue-900);
 }
 
@@ -32,15 +38,19 @@ body {
     width: 60vw;
     margin: 0 auto;
 }
+.link {
+    text-decoration: none;
+    color: inherit;
+    border-bottom: 0.5px solid var(--blue-300);
+}
+
 
 h1 {
-    font-family: Tahoma, sans-serif;
     color: var(--blue-25);
     text-align: left;
 }
 
 form {
-    font-family: Tahoma, sans-serif;
     text-align: left;
 }
 
@@ -120,59 +130,75 @@ form {
     text-decoration: none;
     border-bottom: 2px solid var(--blue-100);
 }
-.clear{
+
+.clear {
     text-decoration: none;
 }
-.clear:hover{
+
+.clear:hover {
     text-decoration: none;
 }
 
 /* About */
 
-.heading{
+.h4{
+    margin: none;
+    padding: none;
+}
+.heading {
     color: var(--blue-25);
     border-bottom: 0.5px solid var(--blue-300);
-    font-weight: 500;
-    font-size: 1.2rem;
-}
-.sub-heading{
-    font-weight: 500;
-    color: var(--blue-50);
-    font-size: 1rem;
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+    
 }
 
-.paragraph{
-    color: var(--blue-100);
-    font-size: 0.9rem;
+.sub-heading {
+    color: var(--blue-50);
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+    margin-top: 0;
+}
+
+.paragraph {
+    color: var(--blue-50);
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
 }
 
 /* Card */
 
 .card-container {
-    display: flex; /* Use flexbox to align items */
-    gap: 20px; /* Gap between each card */
+    display: flex;
+    /* Use flexbox to align items */
+    gap: 20px;
+    /* Gap between each card */
     justify-content: space-between;
-  }
+}
 
 .card {
     flex: 1;
     min-width: 200px;
     max-width: 300px;
     height: auto;
-    padding: 0.5rem;
     box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
     /* border: 1px solid var(--blue-100); */
 
-  }
-  .card__img {
+}
+
+.card-header {
+    display: flex;
+    gap: 10px; /* Gap between image and name */
     width: 100%;
-    height: auto;
-    border-radius: 50%;
-    object-fit: cover; 
+    margin-bottom: 0.5rem; /* Adjust gap between header and text */
   }
   
 .status-code {
-    font-size: 10rem;
+    margin-top: 20vh;
+    font-size: 5rem;
     font-weight: bold;
     color: #F44336;
     margin-bottom: 20px;
@@ -187,10 +213,19 @@ form {
     color: var(--blue-100);
     border-bottom: 1px solid var(--blue-300);
 }
-.error-container {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    /* Add any existing styles for error-container here */
+
+.card-img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+@media (max-width: 768px) {
+    .card-container {
+      flex-direction: column; /* Stack cards vertically */
+      align-items: center; /* Center-align cards */
+    }
   }
+
+

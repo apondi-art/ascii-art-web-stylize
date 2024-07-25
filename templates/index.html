@@ -1,22 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Asci-Art Web</title>
     <link rel="stylesheet" type="text/css" href="/static/css/styling.css">
 </head>
+
 <body>
-    <div class="header">
-        <header>
-            <nav>
-                    <a href="\">Home</a>
-                    <a href="\about">About</a>
-            </nav>
-        </header>
-    </div>
     <div class="container">
-        <h1><a href="/" class="header-link">Generate Ascii Art</a></h1>
+        <div class="header">
+            <header>
+                <nav>
+                    <a href="\" class="link">Home</a>
+                    <a href="\about" class="link">About</a>
+                </nav>
+            </header>
+        </div>
+        <h1 class="heading">Generate Ascii Art</h1>
         <form action="./ascii-art" method="post">
             <label for="input" class="input-label">Enter Text Here:</label><br><br>
             {{if .Input}}
@@ -40,4 +42,5 @@
         {{end}}
     </div>
 </body>
+
 </html>
