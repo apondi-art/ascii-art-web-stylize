@@ -3,7 +3,6 @@
 package art
 
 import (
-	"fmt"
 	"strings"
 
 	"ascii-art-web/ascii-art/ascii"
@@ -31,7 +30,6 @@ func AsciiArt(str, filename string) (string, error) {
 			count++
 			if count < len(strs) {
 				art.WriteString("\n")
-				fmt.Println()
 			}
 		} else {
 			args := &ascii.PrintArgs{

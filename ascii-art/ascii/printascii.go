@@ -2,7 +2,6 @@
 package ascii
 
 import (
-	"fmt"
 	"strings"
 )
 
@@ -22,10 +21,8 @@ func PrintAscii(args *PrintArgs) string {
 			character := args.Characters[int(char)-32]
 			lines := strings.Split(character, "\n")
 			result.WriteString(lines[index])
-			fmt.Print(lines[index])
 		}
 		result.WriteString("\n")
-		fmt.Println()
 		index++
 	}
 	return result.String()
