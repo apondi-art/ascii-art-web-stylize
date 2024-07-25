@@ -23,7 +23,7 @@ func PostAsciiArt(w http.ResponseWriter, r *http.Request) {
 	log.Printf("Received %s request on /ascii-art route\n", r.Method)
 
 	if r.Method != http.MethodPost {
-		renderErrorPage(w, "405 Method not allowed", http.StatusMethodNotAllowed)
+		renderErrorPage(w, "Method not allowed", http.StatusMethodNotAllowed)
 		return
 	}
 	// Retrieve input values from the form submission.
@@ -31,7 +31,7 @@ func PostAsciiArt(w http.ResponseWriter, r *http.Request) {
 	banner := r.FormValue("filename")
 
 	if text == "" || banner == "" {
-		renderErrorPage(w, "400 Bad Request: Missing text or banner", http.StatusBadRequest)
+		renderErrorPage(w, "Bad Request: Missing text or banner", http.StatusBadRequest)
 		return
 	}
 	// Generate ASCII art using the provided input and banner filename.
@@ -39,15 +39,15 @@ func PostAsciiArt(w http.ResponseWriter, r *http.Request) {
 	if err != nil {
 		if strings.Contains(err.Error(), "Not within the printable ascii range") {
 			log.Printf("Error generating ASCII art: %v\n", err)
-			renderErrorPage(w, "400 Bad Request\n"+err.Error(), http.StatusBadRequest)
+			renderErrorPage(w, "Bad Request\n"+err.Error(), http.StatusBadRequest)
 			return
 		} else if strings.Contains(err.Error(), "no such file or directory") {
 			log.Printf("Error generating ASCII art: %v\n", err)
-			renderErrorPage(w, "404 Not Found\n", http.StatusNotFound)
+			renderErrorPage(w, "Not Found\n", http.StatusNotFound)
 			return
 		} else {
 			log.Printf("Error generating ASCII art: %v\n", err)
-			renderErrorPage(w, "500 Internal Server Error\n", http.StatusInternalServerError)
+			renderErrorPage(w, "Internal Server Error\n", http.StatusInternalServerError)
 			return
 		}
 	}
@@ -61,14 +61,14 @@ func PostAsciiArt(w http.ResponseWriter, r *http.Request) {
 	t, err := template.ParseFiles("templates/index.html")
 	if err != nil {
 		log.Printf("Error parsing template: %v\n", err)
-		renderErrorPage(w, "404 Not Found : Missing Template file", http.StatusNotFound)
+		renderErrorPage(w, "Not Found : Missing Template file", http.StatusNotFound)
 		return
 	}
 
 	err = t.Execute(w, resultData)
 	if err != nil {
 		log.Printf("Error executing template: %v\n", err)
-		renderErrorPage(w, "500 Internal Server Error", http.StatusInternalServerError)
+		renderErrorPage(w, "Internal Server Error", http.StatusInternalServerError)
 		return
 	}
 }

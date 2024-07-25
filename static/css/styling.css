@@ -19,6 +19,8 @@ header {
     color: var(--blue-25);
     display: flex;
     text-decoration: none;
+    margin-bottom: 2.5rem;
+    font-size: 1.5rem;
 }
 
 nav {
@@ -193,6 +195,24 @@ form {
     width: 100%;
     margin-bottom: 0.5rem; /* Adjust gap between header and text */
   }
+  
+.status-code {
+    margin-top: 20vh;
+    font-size: 5rem;
+    font-weight: bold;
+    color: #F44336;
+    margin-bottom: 20px;
+}
+.error-message{
+    font-size: 2.5rem;
+    color: var(--blue-100);
+}
+.error-button{
+    font-size: 1rem;
+    text-decoration: none;
+    color: var(--blue-100);
+    border-bottom: 1px solid var(--blue-300);
+}
 
 .card-img {
     width: 100px;
