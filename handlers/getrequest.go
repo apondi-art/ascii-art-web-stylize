@@ -15,7 +15,7 @@ func GetAsciiForm(w http.ResponseWriter, r *http.Request) {
 	// Only allow GET requests; respond with a 405 error for other methods.
 	case "/":
 		if r.Method != http.MethodGet {
-			http.Error(w, "Method Not Allowed", http.StatusMethodNotAllowed)
+			renderErrorPage(w, "Method Not Allowed", http.StatusMethodNotAllowed)
 			return
 		}
 		// Attempt to parse the template file.
