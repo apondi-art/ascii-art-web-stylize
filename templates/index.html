@@ -32,8 +32,10 @@
                 <option value="shadow.txt" {{if eq .Filename "shadow.txt" }}selected{{end}}>shadow</option>
                 <option value="thinkertoy.txt" {{if eq .Filename "thinkertoy.txt" }}selected{{end}}>thinkertoy</option>
             </select>
-            <button type="submit" class="my-button">Generate</button>
-            <a href="/" class="my-button clear">Reset</a><br>
+            <div class="button-container">
+                <button type="submit" class="my-button">Generate</button>
+                <button class="my-button"><a href="/" class="clear">Reset</a></button><br>
+            </div>
         </form>
         {{if .Result}}
         <pre class="result">{{ .Result}}</pre>
