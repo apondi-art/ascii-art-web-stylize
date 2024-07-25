@@ -43,7 +43,7 @@ func PostAsciiArt(w http.ResponseWriter, r *http.Request) {
 			return
 		} else if strings.Contains(err.Error(), "no such file or directory") {
 			log.Printf("Error generating ASCII art: %v\n", err)
-			renderErrorPage(w, "Not Found\n", http.StatusNotFound)
+			renderErrorPage(w, "No such file or directory:Not Found\n", http.StatusNotFound)
 			return
 		} else {
 			log.Printf("Error generating ASCII art: %v\n", err)
