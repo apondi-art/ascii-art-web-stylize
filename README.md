@@ -1,8 +1,8 @@
-# ASCII-ART-WEB
+# ASCII-ART-WEB-STYLIZE
 ## Description
-The ASCII Art Web is a web application that allows a user to generate ASCII art based on different art styles and input text. Users can select an art style and provide text, and the application will generate and display ASCII art corresponding to the chosen style.
+The ASCII-ART-WEB-STYLIZE is an extension of ascii-art-web.The web application that allows a user to generate ASCII art based on different art styles and input text. Users can select an art style and provide text, and the application will generate and display ASCII art corresponding to the chosen style.
 ## Usage: How to run
-To run the ASCII Art Web application, follow these steps:
+To run the ASCII ART WEB STYLIZE application, follow these steps:
 1. Install dependancies:
 
     Ensure you have Go installed. If not, download and install it from [here](https://go.dev/doc/install).
@@ -21,7 +21,7 @@ To run the ASCII Art Web application, follow these steps:
 
 
 ## Implementation
-The implementation of the ASCII Art Web is structured as follows:
+The implementation of the ASCII ART WEB STYLIZE is structured as follows:
 
 * main.go: The main entry point for the web application. It initializes the server and handles incoming HTTP requests.
 
