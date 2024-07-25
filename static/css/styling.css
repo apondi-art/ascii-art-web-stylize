@@ -38,62 +38,112 @@ body {
     width: 60vw;
     margin: 0 auto;
 }
+
 .link {
     text-decoration: none;
     color: inherit;
     border-bottom: 0.5px solid var(--blue-300);
 }
 
-
-h1 {
-    color: var(--blue-25);
-    text-align: left;
+:root {
+    --blue-900: #06222F;
+    --blue-800: #042D41;
+    --blue-700: #023D5A;
+    --blue-600: #02537A;
+    --blue-500: #0673A9;
+    --blue-400: #1E99D6;
+    --blue-300: #4DB6EA;
+    --blue-200: #8CD3F6;
+    --blue-100: #B9E6FC;
+    --blue-50: #E3F6FF;
+    --blue-25: #F1FAFF;
+    --white: #FFFFFF;
+    --red: #F44336;
+    --green: #3EA878;
 }
 
+#input,
+.my-select,
+.my-button,
+.result,
+.my-button
+{
+    border: 0.5px solid var(--blue-200);
+}
+
+.heading,
+.link,
+.error-button {
+    border-bottom: 0.5px solid var(--blue-200);
+}
+
+header,
+h1,
+.input-label,
+#input,
+.my-select,
+.my-button,
+.result,
+.heading,
+.sub-heading {
+    color: var(--blue-25);
+}
+
+#input,
+.my-select,
+.my-button {
+    background-color: var(--blue-900);
+}
+
+.input-label,
+#input,
+.my-select,
+.my-button,
+.sub-heading,
+.paragraph,
+.error-button {
+    font-size: 1rem;
+}
+
+header {
+    display: flex;
+    text-decoration: none;
+    margin-bottom: 2.5rem;
+    font-size: 1.5rem;
+}
+
+nav {
+    display: flex;
+    gap: 50px;
+}
+
+
+body {
+    font-family: Tahoma, sans-serif;
+    background-color: var(--blue-900);
+}
+
+.container {
+    width: 60vw;
+    margin: 0 auto;
+}
+
+.link {
+    text-decoration: none;
+    color: inherit;
+}
+
+
+h1,
 form {
     text-align: left;
 }
 
-.input-label {
-    color: var(--blue-25);
-    font-size: 1rem;
-}
-
-#input {
-    width: 100%;
-    height: 10vh;
-    resize: none;
-    border: 1px solid var(--blue-100);
-    background-color: var(--blue-900);
-    font-size: 1rem;
-    color: var(--blue-25)
-}
-
-#input:focus {
-    border-color: var(--blue-100);
-    outline: none;
-}
-
-.my-select {
-    border: 1px solid var(--blue-100);
-    background-color: var(--blue-900);
-    padding: 0.5rem;
-    color: var(--blue-25);
-    font-size: 1rem;
-    transition: background-color 0.3s, color 0.3s;
-
-}
-
-.my-select:hover {
-    background-color: var(--blue-25);
-    color: var(--blue-900);
-}
-
 .my-button {
-    border: 1px solid var(--blue-100);
+    display: inline-block;
+    width: calc(50% - 5px);
     background-color: var(--blue-900);
     padding: 0.5rem;
-    margin-left: 20px;
     color: var(--blue-25);
     font-size: 1rem;
     transition: background-color 0.3s, color 0.3s;
@@ -105,34 +155,64 @@ form {
     color: var(--blue-900);
 }
 
+.button-container {
+    display: flex;
+    flex-direction: column;
+    /* Stack buttons vertically */
+    gap: 1.5rem;
+    width: 100%;
+}
+
+/* FORM */
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+#input {
+    width: 100%;
+    height: 10vh;
+    resize: none;
+    margin-bottom: 1.5rem;
+}
+
+#input:focus {
+    border-color: var(--blue-100);
+    outline: none;
+}
+
+.my-select {
+    width: 100%;
+    padding: 0.5rem;
+    transition: background-color 0.3s, color 0.3s;
+    margin-bottom: 1.5rem;
+
+}
+
+.my-select:hover {
+    background-color: var(--blue-25);
+    color: var(--blue-900);
+}
+
+
+/* Result */
+
 .result {
     width: 100%;
     min-height: 15vh;
     max-height: 50vh;
     overflow: auto;
-    border: 1px solid var(--blue-100);
     margin: 20px auto;
     font-size: 0.5rem;
     font-weight: 900;
-    color: var(--blue-25);
     font-family: monospace;
     white-space: pre;
 }
 
-.header-link {
-    text-decoration: none;
-    /* Removes underline from the link */
-    color: inherit;
-    /* Inherits the text color from the parent element (the h1) */
-}
-
-.header-link:hover {
-    text-decoration: none;
-    border-bottom: 2px solid var(--blue-100);
-}
-
 .clear {
     text-decoration: none;
+    color: inherit;
 }
 
 .clear:hover {
@@ -141,32 +221,26 @@ form {
 
 /* About */
 
-.h4{
+.h4 {
     margin: none;
     padding: none;
 }
+
 .heading {
-    color: var(--blue-25);
-    border-bottom: 0.5px solid var(--blue-300);
     font-size: 1.5rem;
     margin-bottom: 2rem;
-    
+
 }
 
 .sub-heading {
-    color: var(--blue-50);
-    font-size: 1rem;
     margin-bottom: 0.5rem;
     margin-top: 0;
 }
 
 .paragraph {
     color: var(--blue-50);
-    font-size: 1rem;
     margin-bottom: 0.5rem;
 }
-
-/* Card */
 
 .card-container {
     display: flex;
@@ -185,33 +259,14 @@ form {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    /* border: 1px solid var(--blue-100); */
 
 }
 
 .card-header {
     display: flex;
-    gap: 10px; /* Gap between image and name */
+    gap: 10px;
     width: 100%;
-    margin-bottom: 0.5rem; /* Adjust gap between header and text */
-  }
-  
-.status-code {
-    margin-top: 20vh;
-    font-size: 5rem;
-    font-weight: bold;
-    color: #F44336;
-    margin-bottom: 20px;
-}
-.error-message{
-    font-size: 2.5rem;
-    color: var(--blue-100);
-}
-.error-button{
-    font-size: 1rem;
-    text-decoration: none;
-    color: var(--blue-100);
-    border-bottom: 1px solid var(--blue-300);
+    margin-bottom: 0.5rem;
 }
 
 .card-img {
@@ -221,11 +276,34 @@ form {
     object-fit: cover;
 }
 
+/* Error */
+
+.status-code {
+    margin-top: 10vh;
+    font-size: 5rem;
+    font-weight: bold;
+    color: #F44336;
+    margin-bottom: 20px;
+}
+
+.error-message {
+    font-size: 2.5rem;
+    color: var(--blue-100);
+}
+
+.error-button {
+    text-decoration: none;
+    color: var(--blue-100);
+}
+
+
 @media (max-width: 768px) {
-    .card-container {
-      flex-direction: column; /* Stack cards vertically */
-      align-items: center; /* Center-align cards */
+    .container {
+        width: 80vw;
     }
-  }
 
-
+    .card-container {
+        flex-direction: column;
+        align-items: center;
+    }
+}
