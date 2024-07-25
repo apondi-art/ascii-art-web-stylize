@@ -9,8 +9,8 @@ To run the ASCII Art Web application, follow these steps:
 
 2. Clone the repository:
     ```bash
-    git clone https://learn.zone01kisumu.ke/git/johopiyo/ascii-art-web
-    cd ascii-art-web
+    git clone https://learn.zone01kisumu.ke/git/quochieng/ascii-art-web-stylize.git
+    cd ascii-art-web-stylize
     ```
 3. Run the server:
     ```bash
@@ -29,6 +29,10 @@ The implementation of the ASCII Art Web is structured as follows:
     1. getrequest.go: The main GET entry point on route "/" for the web application
 
     2. postrequest.go: The main POST entry point on route "/ascii-art" for the web application
+
+    3. getabout.go: It handles the GET requests for the about page.
+
+    4. errors.go: It renders error pages for all available errors that may occurs on the webpage.
 
 * ascii-art/: Contains the core logic for generating ASCII art.
 
@@ -60,43 +64,47 @@ The implementation of the ASCII Art Web is structured as follows:
 
     1. index.html: Main HTML template for the application.
 
+    2. about.html: This template contains information about the application and the authors.
+
+    3. error.html: This template generates error messages for the application.
+
 ## Displays
 ### Home Page
 
 When you first run the application, you will see the home page as shown below:
 
-![Home Page](images/Home_page.png)
+![Home Page](images/homepage.png)
 
 
 ### Generating ASCII Art
 
 After entering the text and selecting an art style, the generated ASCII art will be displayed as follows: Below is an illustration of how 'hello' shall be displayed from the standard banner file. You can use the drop-down menu to navigate through the displays from the given banner files.
 
-![Display](images/Standard_hello.png)
+![Display](images/hello_standard.png)
 
+### About Page
+
+The about page displays information about the application and details about the authors.
+
+![About Page](images/About_page.png)
 ### Handling Non-Printable ASCII Characters
 
 If you input non-printable ASCII characters, an error message will be displayed:
 
-![Error](images/PrintableAsciiError.png)
+![Error](images/400_badrequest.png)
 
 ### Missing Banner File or Template
 
 If a banner file is missing, in our example the shadow.txt file has been deleted, an error message will be displayed indicating the issue:
 
-![Error](images/NotFoundError.png)
+![Error](images/fileNotfound.png)
 
-### Any Other Unhandled Errors
-
-If your application encounters a null pointer exception when trying to access a user profile that doesn’t exist, it might result in an HTTP 500 error message below:
-
-![Error](images/InternalServerError.png)
 
 ### Manually Input the route
 
 If we manually insert the route /ascii-art to our server link as a GET request, It shall display the below error message.
 
-![Error](images/routeError.png)
+![Error](images/405_error.png)
 
 ### Reset
 
