@@ -24,7 +24,7 @@ func GetAsciiForm(w http.ResponseWriter, r *http.Request) {
 		if err != nil {
 			// Log parsing errors and return a 500 Internal Server Error.
 			log.Printf("Error parsing template: %v\n", err)
-			http.Error(w, "404 Not Found", http.StatusNotFound)
+			renderErrorPage(w, "404 Not Found", http.StatusNotFound)
 			return
 		}
 		// Execute the parsed template and write it to the response.
@@ -32,12 +32,12 @@ func GetAsciiForm(w http.ResponseWriter, r *http.Request) {
 		if err != nil {
 			// Log execution errors and return a 500 Internal Server Error.
 			log.Printf("Error executing template: %v\n", err)
-			http.Error(w, "500 Internal Server Error", http.StatusInternalServerError)
+			renderErrorPage(w, "500 Internal Server Error", http.StatusInternalServerError)
 			return
 		}
 
 	default:
 		// Return a 404 Not Found error for all other paths.
-		http.NotFound(w, r)
+		renderErrorPage(w, "404 page not found", http.StatusNotFound)
 	}
 }

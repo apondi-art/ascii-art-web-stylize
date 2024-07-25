@@ -12,6 +12,7 @@ import (
 func main() {
 	if len(os.Args) != 1 {
 		log.Fatal("Usage: 'go run .'")
+		return
 	}
 	fs := http.FileServer(http.Dir("static"))
 	http.Handle("/static/", http.StripPrefix("/static/", fs))
